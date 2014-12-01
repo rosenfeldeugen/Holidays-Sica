@@ -5,6 +5,7 @@ namespace Holidays.Notifiers
 {
     public class SmtpNotifier : INotifier
     {
+        //CR: This state can be internal. You can read the SMTP settings from a configuration file.
         public string SmtpServer;
         public int SmtpServerPort;
 

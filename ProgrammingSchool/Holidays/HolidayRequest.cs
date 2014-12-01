@@ -4,6 +4,7 @@ namespace Holidays
 {
     public class HolidayRequest
     {
+        //CR: we don't need this state
         private enum RequestState
         {
             Unknown,
@@ -30,32 +31,37 @@ namespace Holidays
             From = from;
             To = to;
         }
-
+        //CR: these represents an employee
         public string EmployeeName { private set; get; }
         public string EmployeeEmail { private set; get; }
 
+        //CR: these represents an employee
         public string ManagerName { private set; get; }
         public string ManagerEmail { private set; get; }
 
         // holiday period
+        //CR: These can be a Period class
         public DateTime From { private set; get; }
         public DateTime To { private set; get; }
 
         public void Submit()
         {
             State = RequestState.New;
+            //CR: This can be null.
             Submitted(this, EventArgs.Empty);
         }
 
         public void SetAccepted()
         {
             State = RequestState.Accepted;
+            //CR: This can be null.
             Accepted(this, EventArgs.Empty);
         }
 
         public void SetRejected()
         {
             State = RequestState.Rejected;
+            //CR: This can be null.
             Rejected(this, EventArgs.Empty);
         }
 

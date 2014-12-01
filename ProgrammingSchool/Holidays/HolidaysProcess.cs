@@ -11,7 +11,7 @@ namespace Holidays
         {
             notifier = notifyPolicy.CreateNotifier();
         }
-
+        //CR: this can be private and the stored in the configuration file.
         public string HREmailAddress;
 
         public void RegisterHolidayRequest(HolidayRequest request)
